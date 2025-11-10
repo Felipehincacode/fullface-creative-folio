@@ -1,5 +1,5 @@
 import { ChevronLeft, ChevronRight, Image } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 
 interface CarouselProps {
@@ -11,9 +11,30 @@ const Carousel = ({ images, alt = "Imagen de carrusel" }: CarouselProps) => {
   const validImages = useMemo(() => images.filter(Boolean), [images]);
   const [index, setIndex] = useState(0);
   const [errorMap, setErrorMap] = useState<Record<number, boolean>>({});
+  const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
+  const [isInView, setIsInView] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const hasImages = validImages.length > 0;
   const current = index % (hasImages ? validImages.length : 1);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const next = () => {
     if (!hasImages) return;
@@ -25,9 +46,13 @@ const Carousel = ({ images, alt = "Imagen de carrusel" }: CarouselProps) => {
     setIndex((i) => (i - 1 + validImages.length) % validImages.length);
   };
 
+  const handleImageLoad = (imgIndex: number) => {
+    setLoadedImages((prev) => ({ ...prev, [imgIndex]: true }));
+  };
+
   return (
-    <div className="relative w-full">
-      <div className="aspect-[16/10] bg-clinical-gray rounded-lg overflow-hidden">
+    <div ref={containerRef} className="relative w-full">
+      <div className="aspect-[4/5] bg-clinical-gray rounded-lg overflow-hidden p-2">
         {!hasImages || errorMap[current] ? (
           <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-background to-clinical-gray">
             <div className="text-center space-y-3">
@@ -38,12 +63,23 @@ const Carousel = ({ images, alt = "Imagen de carrusel" }: CarouselProps) => {
             </div>
           </div>
         ) : (
-          <img
-            src={validImages[current]}
-            alt={alt}
-            className="w-full h-full object-cover"
-            onError={() => setErrorMap((m) => ({ ...m, [current]: true }))}
-          />
+          <>
+            {!loadedImages[current] && (
+              <div className="absolute inset-0 bg-gradient-to-br from-background to-clinical-gray animate-pulse" />
+            )}
+            {isInView && (
+              <img
+                src={validImages[current]}
+                alt={alt}
+                className={`w-full h-full object-cover transition-opacity duration-300 ${
+                  loadedImages[current] ? 'opacity-100' : 'opacity-0'
+                }`}
+                loading="lazy"
+                onLoad={() => handleImageLoad(current)}
+                onError={() => setErrorMap((m) => ({ ...m, [current]: true }))}
+              />
+            )}
+          </>
         )}
       </div>
 

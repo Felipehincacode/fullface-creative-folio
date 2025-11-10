@@ -25,7 +25,7 @@ const Header = ({ onInfoClick }: HeaderProps) => {
             onClick={onInfoClick}
             variant="outline"
             size="sm"
-            className="border-purple text-purple hover:bg-purple hover:text-white transition-all duration-300"
+            className="bg-white text-black border-gray-300 hover:bg-gray-100 transition-all duration-300"
           >
             <Info className="w-4 h-4 mr-2" />
             Información

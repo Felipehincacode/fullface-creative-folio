@@ -16,12 +16,12 @@ interface InfoModalProps {
 const InfoModal = ({ open, onOpenChange }: InfoModalProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto glass-dark border-border/20 shadow-glow-purple">
+      <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto bg-white border-gray-300 shadow-lg">
         <DialogHeader className="space-y-4 pb-4">
-          <DialogTitle className="text-2xl md:text-3xl font-semibold text-foreground">
+          <DialogTitle className="text-2xl md:text-3xl font-semibold text-black">
             Sobre el Proyecto
           </DialogTitle>
-          <DialogDescription className="text-base text-muted-foreground">
+          <DialogDescription className="text-base text-gray-600">
             Información general de la entrega creativa
           </DialogDescription>
         </DialogHeader>
@@ -32,8 +32,8 @@ const InfoModal = ({ open, onOpenChange }: InfoModalProps) => {
               <Target className="w-5 h-5 text-purple-light" />
             </div>
             <div className="flex-1 space-y-2">
-              <h3 className="font-semibold text-foreground">Objetivo Principal</h3>
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+              <h3 className="font-semibold text-black">Objetivo Principal</h3>
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed">
                 Demostrar versatilidad creativa en formatos audiovisuales y gráficos, 
                 usando IA, ElevenLabs y edición ágil.
               </p>
@@ -47,8 +47,8 @@ const InfoModal = ({ open, onOpenChange }: InfoModalProps) => {
               <Sparkles className="w-5 h-5 text-purple-light" />
             </div>
             <div className="flex-1 space-y-2">
-              <h3 className="font-semibold text-foreground">Propósito</h3>
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+              <h3 className="font-semibold text-black">Propósito</h3>
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed">
                 Generar contenido inspiracional y empático que transmita confianza en 
                 procedimientos no invasivos. Cada carpeta incluye su propio README con 
                 detalles del proceso.
@@ -63,9 +63,9 @@ const InfoModal = ({ open, onOpenChange }: InfoModalProps) => {
               <Mail className="w-5 h-5 text-purple-light" />
             </div>
             <div className="flex-1 space-y-2">
-              <h3 className="font-semibold text-foreground">Contacto</h3>
-              <div className="text-sm md:text-base text-muted-foreground space-y-1">
-                <p className="font-medium text-foreground">Felipe Hincapié Murillo</p>
+              <h3 className="font-semibold text-black">Contacto</h3>
+              <div className="text-sm md:text-base text-gray-600 space-y-1">
+                <p className="font-medium text-black">Felipe Hincapié Murillo</p>
                 <a 
                   href="mailto:fotopipets@gmail.com" 
                   className="text-purple-light hover:underline inline-block transition-colors"

@@ -21,13 +21,13 @@ const Index = () => {
         
         <ContentSection
           id="razones"
-          title="Reel: Razones"
+          title="Reel: Academia 30s"
           description="Un reel dinámico que presenta las razones principales por las que elegir procedimientos no invasivos. Diseñado para inspirar confianza y conectar emocionalmente con la audiencia."
         >
           <VideoBlock
-            title="Reel 'Razones'"
-            src="/background-video.mp4"
-            poster="/placeholder.svg"
+            title="Reel 'Academia 30s'"
+            src="/media/reel_academia/reel_academia.mp4"
+            poster="/media/reel_academia/ree_academia_cover.jpg"
           />
         </ContentSection>
 
@@ -38,8 +38,8 @@ const Index = () => {
         >
           <VideoBlock
             title="Video 'El Poder de la Sonrisa'"
-            src="/background-video.mp4"
-            poster="/placeholder.svg"
+            src="/media/Reel%20FULLFACE/el_poder_de_la_sonrisa.mp4"
+            poster="/media/Reel%20FULLFACE/El%20poder%20de%20la%20sonrisa.jpg"
           />
         </ContentSection>
 
@@ -50,9 +50,12 @@ const Index = () => {
         >
           <Carousel
             images={[
-              "/placeholder.svg",
-              "/placeholder.svg",
-              "/placeholder.svg",
+              "/media/Carrusel%20-%20%20mitos%20y%20verdades/1.png",
+              "/media/Carrusel%20-%20%20mitos%20y%20verdades/2.png",
+              "/media/Carrusel%20-%20%20mitos%20y%20verdades/3.png",
+              "/media/Carrusel%20-%20%20mitos%20y%20verdades/4.png",
+              "/media/Carrusel%20-%20%20mitos%20y%20verdades/5.png",
+              "/media/Carrusel%20-%20%20mitos%20y%20verdades/6.png",
             ]}
             alt="Verdades y Mitos"
           />
@@ -63,11 +66,15 @@ const Index = () => {
           title="Pauta"
           description="Video publicitario estratégico diseñado para maximizar el alcance y engagement en plataformas digitales. Contenido optimizado para campañas de marketing."
         >
+          <VideoBlock
+            title="Video Pauta"
+            src="/media/Pauta/Movimiento/video_pauta.mp4"
+            poster="/media/Pauta/Movimiento/Frame.png"
+          />
           <Carousel
             images={[
-              "/placeholder.svg",
-              "/placeholder.svg",
-              "/placeholder.svg",
+              "/media/Pauta/Estático/1.png",
+              "/media/Pauta/Estático/2.png",
             ]}
             alt="Pauta - Fotos"
           />
@@ -83,7 +90,7 @@ const Index = () => {
                 Accede a todos los archivos, videos originales y documentación del proyecto
               </p>
               <a
-                href="#"
+                href="https://we.tl/t-4VBZEKAzTP"
                 className="inline-flex items-center px-6 py-3 bg-purple hover:bg-purple-dark text-primary-foreground rounded-lg transition-all duration-300 shadow-glow-purple font-medium"
                 target="_blank"
                 rel="noopener noreferrer"

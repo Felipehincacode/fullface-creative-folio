@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Media files
+prueba.rar
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
