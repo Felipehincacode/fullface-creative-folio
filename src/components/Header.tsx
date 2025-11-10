@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Info } from "lucide-react";
+import logo from "@/assets/logo-fullface.png";
 
 interface HeaderProps {
   onInfoClick: () => void;
@@ -7,23 +8,21 @@ interface HeaderProps {
 
 const Header = ({ onInfoClick }: HeaderProps) => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 glass-dark border-b border-border/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <div className="flex items-center space-x-2">
-            <h1 className="text-lg md:text-xl font-semibold text-foreground">
-              Entrega <span className="text-gold">Full Face</span>
-            </h1>
+          <div className="flex items-center space-x-3">
+            <img src={logo} alt="Full Face Logo" className="h-10 md:h-12 w-auto" />
           </div>
           
           <Button
             onClick={onInfoClick}
             variant="outline"
             size="sm"
-            className="border-gold text-gold hover:bg-gold hover:text-primary-foreground transition-all duration-300 shadow-clinical"
+            className="glass border-purple/50 text-purple-light hover:bg-purple hover:text-primary-foreground transition-all duration-300 shadow-glow-purple"
           >
             <Info className="w-4 h-4 mr-2" />
-            Obtener información
+            Información
           </Button>
         </div>
       </div>

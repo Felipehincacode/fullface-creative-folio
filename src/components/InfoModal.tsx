@@ -16,7 +16,7 @@ interface InfoModalProps {
 const InfoModal = ({ open, onOpenChange }: InfoModalProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto bg-background border-border shadow-gold">
+      <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto glass-dark border-border/20 shadow-glow-purple">
         <DialogHeader className="space-y-4 pb-4">
           <DialogTitle className="text-2xl md:text-3xl font-semibold text-foreground">
             Sobre el Proyecto
@@ -28,8 +28,8 @@ const InfoModal = ({ open, onOpenChange }: InfoModalProps) => {
 
         <div className="space-y-6">
           <div className="flex items-start gap-3">
-            <div className="mt-1 p-2 rounded-lg bg-gold/10">
-              <Target className="w-5 h-5 text-gold" />
+            <div className="mt-1 p-2 rounded-lg bg-purple/20">
+              <Target className="w-5 h-5 text-purple-light" />
             </div>
             <div className="flex-1 space-y-2">
               <h3 className="font-semibold text-foreground">Objetivo Principal</h3>
@@ -40,11 +40,11 @@ const InfoModal = ({ open, onOpenChange }: InfoModalProps) => {
             </div>
           </div>
 
-          <Separator className="bg-border" />
+          <Separator className="bg-border/20" />
 
           <div className="flex items-start gap-3">
-            <div className="mt-1 p-2 rounded-lg bg-gold/10">
-              <Sparkles className="w-5 h-5 text-gold" />
+            <div className="mt-1 p-2 rounded-lg bg-purple/20">
+              <Sparkles className="w-5 h-5 text-purple-light" />
             </div>
             <div className="flex-1 space-y-2">
               <h3 className="font-semibold text-foreground">Propósito</h3>
@@ -56,11 +56,11 @@ const InfoModal = ({ open, onOpenChange }: InfoModalProps) => {
             </div>
           </div>
 
-          <Separator className="bg-border" />
+          <Separator className="bg-border/20" />
 
           <div className="flex items-start gap-3">
-            <div className="mt-1 p-2 rounded-lg bg-gold/10">
-              <Mail className="w-5 h-5 text-gold" />
+            <div className="mt-1 p-2 rounded-lg bg-purple/20">
+              <Mail className="w-5 h-5 text-purple-light" />
             </div>
             <div className="flex-1 space-y-2">
               <h3 className="font-semibold text-foreground">Contacto</h3>
@@ -68,7 +68,7 @@ const InfoModal = ({ open, onOpenChange }: InfoModalProps) => {
                 <p className="font-medium text-foreground">Felipe Hincapié Murillo</p>
                 <a 
                   href="mailto:fotopipets@gmail.com" 
-                  className="text-gold hover:underline inline-block transition-colors"
+                  className="text-purple-light hover:underline inline-block transition-colors"
                 >
                   fotopipets@gmail.com
                 </a>

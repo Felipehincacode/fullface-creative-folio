@@ -6,12 +6,14 @@ import VideoPlaceholder from "@/components/VideoPlaceholder";
 import CarouselPlaceholder from "@/components/CarouselPlaceholder";
 import InfoModal from "@/components/InfoModal";
 import Footer from "@/components/Footer";
+import BackgroundVideo from "@/components/BackgroundVideo";
 
 const Index = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background dark">
+      <BackgroundVideo />
       <Header onInfoClick={() => setIsModalOpen(true)} />
       
       <main>
