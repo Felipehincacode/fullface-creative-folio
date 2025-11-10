@@ -26,8 +26,8 @@ const Index = () => {
         >
           <VideoBlock
             title="Reel 'Razones'"
-            src="/media/razones.mp4"
-            poster="/media/posters/razones.jpg"
+            src="/background-video.mp4"
+            poster="/placeholder.svg"
           />
         </ContentSection>
 
@@ -38,8 +38,8 @@ const Index = () => {
         >
           <VideoBlock
             title="Video 'El Poder de la Sonrisa'"
-            src="/media/poder-de-la-sonrisa.mp4"
-            poster="/media/posters/poder-de-la-sonrisa.jpg"
+            src="/background-video.mp4"
+            poster="/placeholder.svg"
           />
         </ContentSection>
 
@@ -50,9 +50,9 @@ const Index = () => {
         >
           <Carousel
             images={[
-              "/media/verdades-mitos/1.jpg",
-              "/media/verdades-mitos/2.jpg",
-              "/media/verdades-mitos/3.jpg",
+              "/placeholder.svg",
+              "/placeholder.svg",
+              "/placeholder.svg",
             ]}
             alt="Verdades y Mitos"
           />
@@ -63,10 +63,13 @@ const Index = () => {
           title="Pauta"
           description="Video publicitario estratégico diseñado para maximizar el alcance y engagement en plataformas digitales. Contenido optimizado para campañas de marketing."
         >
-          <VideoBlock
-            title="Video 'Pauta'"
-            src="/media/pauta.mp4"
-            poster="/media/posters/pauta.jpg"
+          <Carousel
+            images={[
+              "/placeholder.svg",
+              "/placeholder.svg",
+              "/placeholder.svg",
+            ]}
+            alt="Pauta - Fotos"
           />
         </ContentSection>
 
