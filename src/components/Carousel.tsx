@@ -26,7 +26,7 @@ const Carousel = ({ images, alt = "Imagen de carrusel" }: CarouselProps) => {
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: '50px' }
     );
 
     if (containerRef.current) {
@@ -75,6 +75,7 @@ const Carousel = ({ images, alt = "Imagen de carrusel" }: CarouselProps) => {
                   loadedImages[current] ? 'opacity-100' : 'opacity-0'
                 }`}
                 loading="lazy"
+                decoding="async"
                 onLoad={() => handleImageLoad(current)}
                 onError={() => setErrorMap((m) => ({ ...m, [current]: true }))}
               />

@@ -23,4 +23,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   assetsInclude: ['**/*.mp4', '**/*.mov', '**/*.avi', '**/*.webm'],
+  optimizeDeps: {
+    include: ['react', 'react-dom'],
+  },
 }));

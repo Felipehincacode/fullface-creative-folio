@@ -5,9 +5,10 @@ interface VideoBlockProps {
   title: string;
   src?: string;
   poster?: string;
+  priority?: boolean;
 }
 
-const VideoBlock = ({ title, src, poster }: VideoBlockProps) => {
+const VideoBlock = ({ title, src, poster, priority = false }: VideoBlockProps) => {
   const [failed, setFailed] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
@@ -17,6 +18,11 @@ const VideoBlock = ({ title, src, poster }: VideoBlockProps) => {
   const shouldShowPlaceholder = !src || failed;
 
   useEffect(() => {
+    if (priority) {
+      setIsInView(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -24,7 +30,7 @@ const VideoBlock = ({ title, src, poster }: VideoBlockProps) => {
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: '50px' }
     );
 
     if (containerRef.current) {
@@ -32,7 +38,7 @@ const VideoBlock = ({ title, src, poster }: VideoBlockProps) => {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [priority]);
 
   const handleVideoLoad = () => {
     setIsLoaded(true);
@@ -57,6 +63,7 @@ const VideoBlock = ({ title, src, poster }: VideoBlockProps) => {
               alt={title}
               className="absolute inset-0 w-full h-full object-cover filter blur-sm scale-110"
               loading="lazy"
+              decoding="async"
             />
           )}
           {isInView && (
@@ -64,7 +71,7 @@ const VideoBlock = ({ title, src, poster }: VideoBlockProps) => {
               ref={videoRef}
               controls
               playsInline
-              preload="metadata"
+              preload={priority ? "metadata" : "none"}
               poster={poster}
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
                 isLoaded ? 'opacity-100' : 'opacity-0'

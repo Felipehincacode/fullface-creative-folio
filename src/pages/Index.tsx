@@ -28,6 +28,7 @@ const Index = () => {
             title="Reel 'Academia 30s'"
             src="/media/reel_academia/reel_academia.mp4"
             poster="/media/reel_academia/ree_academia_cover.jpg"
+            priority={true}
           />
         </ContentSection>
 
@@ -68,8 +69,8 @@ const Index = () => {
         >
           <VideoBlock
             title="Video Pauta"
-            src="media\Pauta\Movimiento\video_pauta.mp4"
-            poster="media\Pauta\Movimiento\Frame.png"
+            src="/media/Pauta/Movimiento/video_pauta.mp4"
+            poster="/media/Pauta/Movimiento/Frame.png"
           />
           <Carousel
             images={[
