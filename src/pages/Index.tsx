@@ -68,8 +68,8 @@ const Index = () => {
         >
           <VideoBlock
             title="Video Pauta"
-            src="/media/Pauta/Movimiento/video_pauta.mp4"
-            poster="/media/Pauta/Movimiento/Frame.png"
+            src="media\Pauta\Movimiento\video_pauta.mp4"
+            poster="media\Pauta\Movimiento\Frame.png"
           />
           <Carousel
             images={[
