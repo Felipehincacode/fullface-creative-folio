@@ -2,8 +2,8 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ContentSection from "@/components/ContentSection";
-import VideoPlaceholder from "@/components/VideoPlaceholder";
-import CarouselPlaceholder from "@/components/CarouselPlaceholder";
+import VideoBlock from "@/components/VideoBlock";
+import Carousel from "@/components/Carousel";
 import InfoModal from "@/components/InfoModal";
 import Footer from "@/components/Footer";
 import BackgroundVideo from "@/components/BackgroundVideo";
@@ -24,7 +24,11 @@ const Index = () => {
           title="Reel: Razones"
           description="Un reel dinámico que presenta las razones principales por las que elegir procedimientos no invasivos. Diseñado para inspirar confianza y conectar emocionalmente con la audiencia."
         >
-          <VideoPlaceholder title="Reel 'Razones' - Próximamente" />
+          <VideoBlock
+            title="Reel 'Razones'"
+            src="/media/razones.mp4"
+            poster="/media/posters/razones.jpg"
+          />
         </ContentSection>
 
         <ContentSection
@@ -32,7 +36,11 @@ const Index = () => {
           title="El Poder de la Sonrisa"
           description="Video emotivo y empático que explora el impacto transformador de una sonrisa. Combina storytelling visual con mensajes positivos sobre el autocuidado y la confianza personal."
         >
-          <VideoPlaceholder title="Video 'El Poder de la Sonrisa' - Próximamente" />
+          <VideoBlock
+            title="Video 'El Poder de la Sonrisa'"
+            src="/media/poder-de-la-sonrisa.mp4"
+            poster="/media/posters/poder-de-la-sonrisa.jpg"
+          />
         </ContentSection>
 
         <ContentSection
@@ -40,7 +48,14 @@ const Index = () => {
           title="Verdades y Mitos"
           description="Carrusel informativo que desmitifica conceptos erróneos sobre los procedimientos estéticos no invasivos. Contenido educativo presentado de forma clara y accesible."
         >
-          <CarouselPlaceholder />
+          <Carousel
+            images={[
+              "/media/verdades-mitos/1.jpg",
+              "/media/verdades-mitos/2.jpg",
+              "/media/verdades-mitos/3.jpg",
+            ]}
+            alt="Verdades y Mitos"
+          />
         </ContentSection>
 
         <ContentSection
@@ -48,7 +63,11 @@ const Index = () => {
           title="Pauta"
           description="Video publicitario estratégico diseñado para maximizar el alcance y engagement en plataformas digitales. Contenido optimizado para campañas de marketing."
         >
-          <VideoPlaceholder title="Video 'Pauta' - Próximamente" />
+          <VideoBlock
+            title="Video 'Pauta'"
+            src="/media/pauta.mp4"
+            poster="/media/posters/pauta.jpg"
+          />
         </ContentSection>
 
         <section className="py-12 px-4 sm:px-6 lg:px-8 relative z-10">
